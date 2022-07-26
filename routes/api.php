@@ -21,6 +21,7 @@ Route::group(['middleware' => ['auth:sanctum']], function($route){
     
     //add invoices to the database
     $route->post('/add/invoice', [InvoiceController::class, 'add']);
-    $route->get('/invoice/{id}', [InvoiceController::class, 'index']);
+    $route->get('/invoice', [InvoiceController::class, 'index']);
+    $route->get('/invoice/{id}', [InvoiceController::class, 'show']);
 });
 
